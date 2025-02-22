@@ -1,7 +1,10 @@
-package main
+package pokedexcli
 
-import "fmt"
+import "strings"
 
-func main() {
-	fmt.Println("Hello, World!")
+func cleanInput(text string) []string {
+	// First, trime the spaces from the start and end
+	cleaned := strings.TrimSpace(text)
+	cleaned = strings.ToLower(cleaned)
+	return strings.Fields(cleaned)
 }
