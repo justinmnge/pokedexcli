@@ -1,4 +1,4 @@
-package pokedexcli
+package main
 
 import "testing"
 
@@ -8,23 +8,23 @@ func TestCleanInput(t *testing.T) {
 		expected []string
 	}{
 		{
-			input: " hello world ",
+			input:    " hello world ",
 			expected: []string{"hello", "world"},
 		},
 		{
-			input: "HELLO WORLD",
+			input:    "HELLO WORLD",
 			expected: []string{"hello", "world"},
 		},
 		{
-			input: "hello  world",
-			expected: []string{"hello", "world"}, 
+			input:    "hello  world",
+			expected: []string{"hello", "world"},
 		},
 		{
-			input: " hello world",
+			input:    " hello world",
 			expected: []string{"hello", "world"},
 		},
 	}
-	
+
 	for _, c := range cases {
 		actual := cleanInput(c.input)
 		// Check the length of the actual slice
